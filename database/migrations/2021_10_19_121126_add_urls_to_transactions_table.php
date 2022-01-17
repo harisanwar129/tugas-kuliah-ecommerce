@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddUrlsToTransactionsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->string('notify_url')->nullable();
+            $table->string('return_url')->nullable();
+            $table->string('cancel_url')->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->dropColumn('notify_url');
+            $table->dropColumn('return_url');
+            $table->dropColumn('cancel_url');
+        });
+    }
+}
