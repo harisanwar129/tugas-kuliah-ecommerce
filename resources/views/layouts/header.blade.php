@@ -11,6 +11,11 @@
     <title>{{ config('setting.app_name') }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PWA  -->
+<!-- PWA  -->
+<meta name="theme-color" content="#6777ef"/>
+<link rel="apple-touch-icon" href="{{ asset('gemilang.jpg') }}">
+<link rel="manifest" href="{{ asset('/manifest.json') }}">
 
     @include('layouts.header_css')
     @stack('css')
@@ -18,6 +23,14 @@
 </head>
 
 <body>
+<script src="{{ asset('/sw.js') }}"></script>
+<script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+</script>
     <!-- header-area-start -->
     <header>
         <!-- header-top-area-start -->
@@ -44,7 +57,7 @@
                                     <li><a class="font-weight-bold" href="{{ route('register') }}">{{ __('messages.my_account') }}
                                             <b>({{ Auth::user()->name }})</b></a></li>
                                 @else
-                                    <li><a class="font-weight-bold" href="{{ route('login') }}">Sign in</a></li>
+                                    <li><a class="font-weight-bold" href="{{ route('login') }}">Login</a></li>
                                     <li><a class="font-weight-bold" href="{{ route('register') }}">Register</a></li>
                                 @endif
                             </ul>
@@ -100,11 +113,10 @@
                                                 @endforeach
                                             </div>
                                             <div class="cart-bottom">
-                                                <a class="view-cart" href="{{ route('my_wishlist') }}">View Wishlist</a>
+                                                <a class="view-cart" href="{{ route('my_wishlist') }}">Lihat Favorite</a>
                                             </div>
                                         </div></li>
-                                    <li><a href="{{ route('my_cart') }}"><i class="fa fa-shopping-cart"></i>My
-                                            Cart</a>
+                                    <li><a href="{{ route('my_cart') }}"><i class="fa fa-shopping-cart"></i> </a>
                                         <span
                                             id="cart_items_count">{{ App\Models\TransactionItem::where('user_id', Auth::user()->id)->where('transaction_id', null)->count() }}</span>
                                         <div class="mini-cart-sub">
@@ -130,7 +142,7 @@
                                                 </h5>
                                             </div>
                                             <div class="cart-bottom">
-                                                <a class="view-cart" href="{{ route('my_cart') }}">view cart</a>
+                                                <a class="view-cart" href="{{ route('my_cart') }}">Lihat Keranjang</a>
                                             </div>
                                         </div>
                                     </li>
@@ -224,3 +236,4 @@
         <!-- mobile-menu-area-end -->
     </header>
     <!-- header-area-end -->
+

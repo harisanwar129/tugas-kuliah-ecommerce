@@ -61,7 +61,7 @@
                                                     <table class="table table-bordered">
                                                         <thead class="thead-light">
                                                             <tr>
-                                                                <th>#</th>
+                                                                <th>No</th>
                                                                 <th>{{ __('messages.label_date') }}</th>
                                                                 <th>No Invoice</th>
                                                                 <th>Status Pembayaran</th>

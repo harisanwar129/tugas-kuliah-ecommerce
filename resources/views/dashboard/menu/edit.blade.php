@@ -58,7 +58,8 @@
                     </div>
 
                     <div class="form-group col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary formSubmitter">Simpan</button>
+                      <input  class="btn btn-primary" type="reset" value="reset">
+                        <button type="submit" class="btn btn-success formSubmitter">Simpan</button>
                     </div>
                 </form>
             </div>

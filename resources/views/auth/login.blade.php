@@ -34,7 +34,8 @@
                                 @endif
                         </div>
                         <div class="single-login single-login-2 d-flex">
-                            <button type="submit" class="btn btn-sqr">login</button>
+                         <button  class="btn btn-primary" type="reset" value="reset" style=" margin-left: 10px;">Reset</button>
+                            <button type="submit" class="btn btn-success" style=" margin-left: 10px;">login</button>
                         </div>
                         @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}">{{ __('messages.label_forgot_password') }}</a>

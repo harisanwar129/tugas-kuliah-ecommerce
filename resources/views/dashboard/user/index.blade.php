@@ -18,14 +18,13 @@
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
-                                <th width="10">#</th>
+                                <th width="10">No</th>
                                 <th width="40">Foto</th>
                                 <th>Username</th>
                                 <th>Nama Lengkap</th>
                                 <th>Nomor HP</th>
                                 <th>Email</th>
-                                <th width="40">Role</th>
-                                <th width="30">Produk Dimiliki</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -72,14 +71,7 @@
                         data: 'email',
                         name: 'email'
                     },
-                    {
-                        data: 'role',
-                        name: 'role'
-                    },
-                    {
-                        data: 'products_count',
-                        name: 'products_count'
-                    },
+                    
                 ]
             });
         });

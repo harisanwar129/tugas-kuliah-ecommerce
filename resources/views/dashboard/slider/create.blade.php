@@ -37,7 +37,7 @@
                         <input type="number" class="form-control" name="urutan" value="{{ old('urutan') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label>Thumbnail</label>
+                        <label>Gambar</label>
                         <input type="file" class="form-control" name="thumbnail">
                         <small class="text-muted">Disarankan ukuran: 1360 x 760</small>
                         @if ($errors->has('thumbnail'))
@@ -57,7 +57,8 @@
                     </div>
 
                     <div class="form-group col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary formSubmitter">Simpan</button>
+                        <input  class="btn btn-primary" type="reset" value="reset">
+                        <button type="submit" class="btn btn-success formSubmitter">Simpan</button>
                     </div>
                 </form>
             </div>

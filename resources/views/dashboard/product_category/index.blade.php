@@ -18,10 +18,11 @@
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Nama Kategori</th>
-                            <th width="120">Thumbnail</th>
-                            <th width="40">Aksi</th>
+                            <th width="20px">No</th>
+                            <th width="10px">Nama Kategori</th>
+                            <th width="20px">Slug</th>
+                            <th width="150px">Gambar</th>
+                            <th width="40px">Aksi</th>
                         </tr>
                     </thead>
 
@@ -31,6 +32,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
+                                   <td>{{ $item->slug }}</td>
                                 <td>
                                     <img src="{{ MyHelper::get_uploaded_file_url($item->thumbnail) }}" alt="picture" width="120">
                                 </td>

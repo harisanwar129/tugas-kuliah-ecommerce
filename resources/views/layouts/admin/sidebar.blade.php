@@ -27,7 +27,7 @@
                     <li>
                         <a href="{{ route('dashboard.master.product_category.index') }}">
                             <i class="mdi mdi-tag"></i>
-                            <span> Kategori Produk </span>
+                            <span> Kategori </span>
                         </a>
                     </li>
                     <li>
@@ -50,26 +50,26 @@
                 <li>
                     <a href="{{ route('dashboard.histori_penjualan') }}">
                         <i class="mdi mdi-file-table-outline"></i>
-                        <span> Histori Penjualan </span>
+                        <span> Transaksi Penjualan </span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ route('dashboard.setting') }}">
                         <i class="mdi mdi-settings"></i>
-                        <span> Setting Aplikasi </span>
+                        <span> Pengaturan </span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('dashboard.master.slider.index') }}">
                         <i class="mdi mdi-settings"></i>
-                        <span> Slider Web </span>
+                        <span> Slider  </span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('dashboard.master.page.index') }}">
                         <i class="mdi mdi-settings"></i>
-                        <span> Custom Halaman </span>
+                        <span>  Halaman </span>
                     </a>
                 </li>
                 <li>
@@ -84,6 +84,12 @@
                         <span> Sub Menu </span>
                     </a>
                 </li>
+
+                  <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item notify-item"  onClick="return confirm('Apakah Anda yakin ingin keluar?')"><i
+                                    class="mdi mdi-settings"></i> Logout</button>
+                        </form>
 
             </ul>
 

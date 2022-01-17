@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label>Thumbnail Produk</label><br>
+                        <label>Gambar Produk</label><br>
                         <img src="{{ MyHelper::get_uploaded_file_url($product->thumbnail) }}" alt="picture" width="150" class="mb-1">
                         <input type="file" class="form-control" name="thumbnail">
                     </div>
@@ -96,7 +96,8 @@
                     </div>
 
                     <div class="form-group col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary formSubmitter">Simpan</button>
+                     <input  class="btn btn-primary" type="reset" value="reset">
+                        <button type="submit" class="btn btn-success formSubmitter">Simpan</button>
                     </div>
                 </form>
             </div>

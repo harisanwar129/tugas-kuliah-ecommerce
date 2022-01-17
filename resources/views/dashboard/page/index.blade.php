@@ -15,7 +15,7 @@
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No</th>
                             <th>Nama Halaman</th>
                             <th>Slug</th>
                             <th width="40">Aksi</th>

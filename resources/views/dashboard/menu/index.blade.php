@@ -15,7 +15,7 @@
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No</th>
                             <th>Menu</th>
                             <th>Has Sub Menu?</th>
                             <th>Link</th>
