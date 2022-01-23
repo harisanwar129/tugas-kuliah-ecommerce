@@ -21,14 +21,14 @@
                 <div class="col-lg-12">
                     <form action="#">
                         <div class="table-content table-responsive mb-15 border-1">
-                            <table>
-                                <thead>
+                            <table >
+                                <thead class="table-secondary">
                                     <tr>
-                                        <th>NO</th>
-                                        <th class="product-thumbnail">{{ __('messages.label_photo') }}</th>
-                                        <th class="product-name">{{ __('messages.label_product') }}</th>
-                                        <th class="product-price">{{ __('messages.label_price') }}</th>
-                                        <th class="product-price">{{ __('messages.label_action') }}</th>
+                                        <th class="fw-bold">NO</th>
+                                        <th class="fw-bold product-thumbnail">{{ __('messages.label_photo') }}</th>
+                                        <th class="fw-bold product-name">{{ __('messages.label_product') }}</th>
+                                        <th class="fw-bold product-price">{{ __('messages.label_price') }}</th>
+                                        <th class="fw-bold product-price">{{ __('messages.label_action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>

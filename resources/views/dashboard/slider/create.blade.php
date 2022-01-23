@@ -21,6 +21,11 @@
                         <label>Subtitle</label>
                         <input type="text" class="form-control" name="subtitle" value="{{ old('subtitle') }}">
                         <small class="text-muted">Disarankan tidak lebih dari 30 Karakter</small>
+                         @if ($errors->has('subtitle'))
+                            @foreach ($errors->get('subtitle') as $msg)
+                                <small class="text-danger">{{ $msg }}</small>
+                            @endforeach
+                        @endif
                     </div>
                     <div class="form-group col-md-4">
                         <label>Teks Tombol</label>

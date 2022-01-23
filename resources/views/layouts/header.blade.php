@@ -11,7 +11,9 @@
     <title>{{ config('setting.app_name') }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- PWA  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
 <!-- PWA  -->
 <meta name="theme-color" content="#6777ef"/>
 <link rel="apple-touch-icon" href="{{ asset('gemilang.jpg') }}">
@@ -34,10 +36,10 @@
     <!-- header-area-start -->
     <header>
         <!-- header-top-area-start -->
-        <div class="header-top-area">
+        {{-- <div class="header-top-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-12">
+                    {{-- <div class="col-lg-6 col-md-6 col-12">
                         <div class="language-area">
                             <ul>
 								<li><img src="{{ asset('') }}/img/flag/{{ Str::lower(Lang::locale()) == 'id' ? 'id.jpg' : 'en.jpg' }}" alt="flag" width="18" /><a href="#">{{ MyHelper::get_lang(Lang::locale()) }}<i class="fa fa-angle-down"></i></a>
@@ -49,8 +51,8 @@
 								</li>
 							</ul>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12">
+                    </div> --}}
+                    {{-- <div class="col-lg-6 col-md-6 col-12">
                         <div class="account-area text-right">
                             <ul>
                                 @if (Auth::check())
@@ -65,13 +67,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- header-top-area-end -->
         <!-- header-mid-area-start -->
         <div class="header-mid-area ptb-40">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-5 col-12">
+                    <div class="col-lg-4 col-md-12 col-12">
                         <div class="header-search d-lg-none d-block">
                             <form action="{{ route('front.search') }}" method="POST" class="d-flex justify-content-between">
                                 @csrf
@@ -80,21 +82,23 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-4 col-12">
+                    <div class="col-lg-4 col-md-12 col-12">
                         <div class="logo-area text-center logo-xs-mrg">
                             <a href="{{ route('welcome') }}"><img src="{{ config('setting.logo_rect_url') == '' ? asset('img/yourlogo.png') : config('setting.logo_rect_url') }}" alt="logo"
-                                    width="150" /></a>
+                                    width="200"  /></a>
                         </div>
                     </div>
+                    
+
                     @if (Auth::check() && Auth::user()->role == 'MEMBER')
-                        <div class="col-lg-3 col-md-3 col-12">
+                        <div class="col-lg-4 col-md-12 col-12 " style="text:center">
                             <div class="my-cart">
                                 <ul class="d-flex justify-content-between">
                                     @php
                                         $my_cart_item = App\Models\TransactionItem::with(['product'])->where('user_id', Auth::user()->id)->where('transaction_id', null)->get();
                                         $my_wishlist_item = App\Wishlist::with(['product'])->where('user_id', Auth::user()->id)->get();
                                     @endphp
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ route('my_wishlist') }}"><i class="fa fa-heart"></i></a>
                                         <span
                                             id="cart_items_count">{{ $my_wishlist_item->count() }}</span>
@@ -115,7 +119,7 @@
                                             <div class="cart-bottom">
                                                 <a class="view-cart" href="{{ route('my_wishlist') }}">Lihat Favorite</a>
                                             </div>
-                                        </div></li>
+                                        </div></li> --}}
                                     <li><a href="{{ route('my_cart') }}"><i class="fa fa-shopping-cart"></i> </a>
                                         <span
                                             id="cart_items_count">{{ App\Models\TransactionItem::where('user_id', Auth::user()->id)->where('transaction_id', null)->count() }}</span>
@@ -144,13 +148,38 @@
                                             <div class="cart-bottom">
                                                 <a class="view-cart" href="{{ route('my_cart') }}">Lihat Keranjang</a>
                                             </div>
+                                             <div class="cart-bottom">
+                                                <a class="view-cart" href="{{ route('my_wishlist') }}">Lihat Wishlist</a>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     @endif
+
+               
+
+                  
                 </div>
+
+               <div class="row">
+                    <div class="col-lg-12 col-md-3 col-12 pb-562" >
+                        <div class="account-area text-right">
+                            <ul>
+                                @if (Auth::check())
+                                    <li><a class="font-weight-bold" href="{{ route('register') }}">{{ __('messages.my_account') }}
+                                            <b>({{ Auth::user()->name }})</b></a></li>
+                                @else
+                                    <li><a class="font-weight-bold" href="{{ route('login') }}">Login</a></li>
+                                    <li><a class="font-weight-bold" href="{{ route('register') }}">Register</a></li>
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
+               
+               </div>
+
             </div>
         </div>
         <!-- header-mid-area-end -->
@@ -189,7 +218,7 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 ">
                         <div class="header-search">
                             <form action="{{ route('front.search') }}" method="POST" class="d-flex justify-content-between">
                                 @csrf

@@ -16,12 +16,12 @@
 
                 <table id="datatable" class="table table-bordered dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                    <thead>
+                    <thead class="text-center">
                         <tr>
                             <th width="20px">No</th>
                             <th width="10px">Nama Kategori</th>
                             <th width="20px">Slug</th>
-                            <th width="150px">Gambar</th>
+                            <th width="20px">Gambar</th>
                             <th width="40px">Aksi</th>
                         </tr>
                     </thead>
@@ -34,7 +34,7 @@
                                 <td>{{ $item->name }}</td>
                                    <td>{{ $item->slug }}</td>
                                 <td>
-                                    <img src="{{ MyHelper::get_uploaded_file_url($item->thumbnail) }}" alt="picture" width="120">
+                                    <img src="{{ MyHelper::get_uploaded_file_url($item->thumbnail) }}" alt="picture" style="margin-left:auto;margin-right:auto;display:block;width:100px;height:100px;">
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-start">

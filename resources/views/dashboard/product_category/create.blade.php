@@ -6,21 +6,16 @@
             <div class="card-box">
                 <form class="row myForm" method="POST" action="{{ route('dashboard.master.product_category.store') }}"
                     enctype="multipart/form-data">
-                    @if ($errors->any())
-                        <div class="col-md-12">
-                            <ul>
-                                @foreach ($errors->all() as $item)
-                                    <li class="text-danger">
-                                        {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                   
                     @csrf
                     <div class="form-group col-md-8">
                         <label>Nama Kategori Produk</label>
-                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" class="form-control-front">
+                          @if ($errors->has('name'))
+                                        @foreach ($errors->get('name') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                         <small>slug kategori akan menjadi: <code id="slugPreview"></code></small>
                     </div>
                     <div class="form-group col-md-4">

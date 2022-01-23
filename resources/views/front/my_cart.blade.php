@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="entry-header-title">
-                        <h2>Cart</h2>
+                        <h2>Keranjang</h2>
                     </div>
                 </div>
             </div>
@@ -22,15 +22,15 @@
                     <form action="#">
                         <div class="table-content table-responsive mb-15 border-1">
                             <table>
-                                <thead>
+                                <thead class="table-secondary">
                                     <tr>
-                                        <th>NO</th>
-                                        <th class="product-thumbnail">{{ __('messages.label_photo') }}</th>
-                                        <th class="product-name">{{ __('messages.label_product') }}</th>
-                                        <th class="product-price">{{ __('messages.label_price') }}</th>
-                                        <th class="product-quantity">{{ __('messages.label_qty') }}</th>
-                                        <th class="product-subtotal">Total</th>
-                                        <th class="product-remove">{{ __('messages.label_action') }}</th>
+                                        <th class="fw-bold">NO</th>
+                                        <th class="fw-bold product-thumbnail">{{ __('messages.label_photo') }}</th>
+                                        <th class="fw-bold product-name">{{ __('messages.label_product') }}</th>
+                                        <th class="fw-bold product-price">{{ __('messages.label_price') }}</th>
+                                        <th class="fw-bold product-quantity">{{ __('messages.label_qty') }}</th>
+                                        <th class="fw-bold product-subtotal">Total</th>
+                                        <th class="fw-bold product-remove">{{ __('messages.label_action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,7 +67,7 @@
                                                             {{ MyHelper::rupiah($item->product->price) }}</span>
                                                     @endif
                                                 </span></td>
-                                            <td class="product-quantity"><input class="quantities" type="number"
+                                            <td class="product-quantity"><input class="quantities" type="number" min="1"
                                                     id="{{ $item->id }}" value="{{ $item->quantity }}">
                                                 <button type="button" class="btn-icon btn-update-qty"
                                                     id="{{ $item->id }}">

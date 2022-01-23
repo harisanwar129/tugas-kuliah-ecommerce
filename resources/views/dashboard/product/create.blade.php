@@ -6,21 +6,16 @@
             <div class="card-box">
                 <form class="row myForm" id="myForm" method="POST"
                     action="{{ route('dashboard.master.product.store') }}" enctype="multipart/form-data">
-                    @if ($errors->any())
-                        <div class="col-md-12">
-                            <ul>
-                                @foreach ($errors->all() as $item)
-                                    <li class="text-danger">
-                                        {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                 
                     @csrf
                     <div class="form-group col-md-6">
                         <label>Nama Produk</label>
-                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" required>
+                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" >
+                           @if ($errors->has('name'))
+                                        @foreach ($errors->get('name') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
                     <div class="form-group col-md-3">
                         <label>Harga Normal</label>
@@ -28,9 +23,17 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Rp</span>
                             </div>
-                            <input type="text" name="price" required value="{{ old('price') }}"
+                            <input type="text" name="price"  value="{{ old('price') }}"
                                 class="form-control rupiah" placeholder="Harga">
+                                   
                         </div>
+                        <div>
+                                   @if ($errors->has('price'))
+                                        @foreach ($errors->get('price') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                         <small>
                             <input id="discount" name="discount" value="1" type="checkbox">
                             <label for="discount" class="text-muted font-weight-normal">

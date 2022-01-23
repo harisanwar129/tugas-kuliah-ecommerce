@@ -64,11 +64,11 @@
                                                 <div class="product-price">
                                                     <ul>
                                                         @if ($item->is_discount)
-                                                            <li>{{ MyHelper::rupiah($item->price_striked ?? 0) }}</li>
+                                                            <li>@currency($item->price_striked ?? 0) </li>
                                                             <li class="old-price">
-                                                                {{ MyHelper::rupiah($item->price) }}</li>
+                                                                @currency($item->price) </li>
                                                         @else
-                                                            <li>{{ MyHelper::rupiah($item->price) }}</li>
+                                                            <li>@currency($item->price) </li>
                                                         @endif
                                                     </ul>
                                                 </div>

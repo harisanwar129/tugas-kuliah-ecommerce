@@ -4,7 +4,7 @@
     <div class="footer-mid ptb-50">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-12">
+                <div class="col-lg-6 col-md-6">
                     <div class="row">
                         @php
                             $menu = \App\Menu::where('visible', 1)
@@ -37,6 +37,29 @@
                             </div>
                         @endforeach
                     </div>
+                </div>
+                
+            </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8" >
+
+             <ul class="list-group list-group-horizontal mt-4" >
+                            <li class=" list-inline-item ">  <a href="https://web.facebook.com/GEMILANG-JAYA-KOMPUTER-1156380917844918/?_rdc=1&_rdr"><i id="social" class="fa fa-facebook-square fa-3x" style="margin-right:20px;color:white;"></i> </a>
+                            </li>
+                            <li  class=" list-inline-item"> <a href="https://www.instagram.com/gemilang_jaya_komputer/?hl=id"><i id="social" class="fa fa-instagram fa-3x" style="margin-right:20px;color:white;"></i> </a>
+                            </li>
+                            <li class=" list-inline-item">  <a href=""><i id="social" class="fa fa-google-plus-square fa-3x" style="margin-right:20px;color:white;"></i> </a>
+                            </li>
+                        </ul>
+                   
+     
+                </div>
+                <div class="col-lg-4 col-md-4 ">
+                        <ul class="list-group list-group-vertical ">
+                            <li> <h4 class="text-center mr-79" style="color:white;">Jadwal Operasional </h4></li>
+                            <li> <h6 class="text-center" style="color:white;">Senin-Jum'at: 08.00 s.d 16.00 WIB</h6></li>
+                            <li>  <h6 style="color:white;" class="text-center">Sabtu-Minggu: 08.00 s.d 17.00 WIB</h6></li>
+                        </ul>
                 </div>
             </div>
         </div>
