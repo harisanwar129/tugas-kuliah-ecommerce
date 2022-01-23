@@ -41,7 +41,7 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="single-register">
                                     <label>Handphone<span>*</span></label>
-                                    <input type="number" name="phone" value="{{ old('phone') }}" class="form-control-front" />
+                                    <input type="number" min="0"name="phone" value="{{ old('phone') }}" class="form-control-front" />
                                     @if ($errors->has('phone'))
                                         @foreach ($errors->get('phone') as $msg)
                                             <small class="text-danger">{{ $msg }}</small>

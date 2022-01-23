@@ -18,6 +18,8 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
+    
+    
     public function index(Request $request)
     {
 
@@ -91,6 +93,15 @@ class ProductController extends Controller
         return view('dashboard.product.index', $data);
     }
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'price' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string', 'max:255'],
+            
+        ]);
+    }
     public function create()
     {
         $data = [

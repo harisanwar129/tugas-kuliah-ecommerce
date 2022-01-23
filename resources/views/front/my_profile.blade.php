@@ -106,7 +106,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <div class="single-input-item">
-                                                                    <label for="phone" class="required">Handphone</label>
+                                                                    <label for="phone" min="0" class="required">Handphone</label>
                                                                     <input type="number" name="phone"
                                                                         value="{{ $user->phone }}" id="phone"
                                                                         placeholder="Handphone" />

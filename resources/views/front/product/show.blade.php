@@ -74,14 +74,16 @@
                                                 <button id="add_to_wishlist" class="btn-sqr"><i class="fa fa-heart"></i></button>
                                             </form>
                                         </div>
-                                        <div class="product-addto-links-text pt-4">
-                                            <span class="font-weight-bold">
+                                        <div class="product-addto-links-text pt-4 text-center ">
+                                            <h4 class="font-weight-bold">
                                                 Deskripsi Produk
-                                            </span>
+                                            </h4>
+                                            </div>
+                                            <br>
                                             <p>
                                                 {{ $product->description }}
                                             </p>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

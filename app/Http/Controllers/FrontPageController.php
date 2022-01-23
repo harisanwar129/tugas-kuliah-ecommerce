@@ -71,7 +71,7 @@ class FrontPageController extends Controller
     {
         $data = [
             'title' => 'Cart Saya',
-            'items' => TransactionItem::with(['product'])->where('user_id', Auth::user()->id)->where('transaction_id', NULL)->paginate(1)
+            'items' => TransactionItem::with(['product'])->where('user_id', Auth::user()->id)->where('transaction_id', NULL)->paginate(5)
         ];
 
         return view('front.my_cart', $data);
@@ -81,7 +81,7 @@ class FrontPageController extends Controller
     {
         $data = [
             'title' => 'Wishlist Saya',
-            'items' => Wishlist::with(['product'])->where('user_id', Auth::user()->id)->paginate(1)
+            'items' => Wishlist::with(['product'])->where('user_id', Auth::user()->id)->paginate(5)
         ];
 
         return view('front.my_wishlist', $data);

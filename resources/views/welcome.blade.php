@@ -58,7 +58,15 @@
     <!-- slider-area-end -->
 
     <!-- banner-static-area-start -->
-    <h2 style="text-align:center">KATEGORI</h2>
+
+    <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center mt-550">
+                            <h2 style="text-align:center;style:">KATEGORI</h2>
+                        </div>
+                    </div>
+                    </div>
+    
     <div class="banner-static-area bg mt-5">
         <div class="container">
             <div class="row tab-active-2 owl-carousel">
@@ -148,11 +156,11 @@
                                             <div class="product-price">
                                                 <ul>
                                                     @if ($item->is_discount)
-                                                        <li>{{ MyHelper::rupiah($item->price_striked ?? 0) }}</li>
-                                                        <li class="old-price">{{ MyHelper::rupiah($item->price) }}
+                                                        <li>@currency($item->price_striked ?? 0)</li>
+                                                        <li class="old-price">@currency($item->price) 
                                                         </li>
                                                     @else
-                                                        <li>{{ MyHelper::rupiah($item->price) }}</li>
+                                                        <li>@currency($item->price) </li>
                                                     @endif
                                                 </ul>
                                             </div>
@@ -212,11 +220,11 @@
                                             <div class="product-price">
                                                 <ul>
                                                     @if ($item->is_discount)
-                                                        <li>{{ MyHelper::rupiah($item->price_striked ?? 0) }}</li>
-                                                        <li class="old-price">{{ MyHelper::rupiah($item->price) }}
+                                                        <li>@currency($item->price_striked ?? 0) </li>
+                                                        <li class="old-price">@currency($item->price) 
                                                         </li>
                                                     @else
-                                                        <li>{{ MyHelper::rupiah($item->price) }}</li>
+                                                        <li>@currency($item->price) </li>
                                                     @endif
                                                 </ul>
                                             </div>
