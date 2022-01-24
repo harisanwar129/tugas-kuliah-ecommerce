@@ -10,17 +10,18 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-5 col-xs-12">
                             <div class="modal-tab">
-                                <div class="product-details-large tab-content" id="productDetailImages">
+                                <div class="product-details-large tab-content" id="productDetailImages" style="width:100%; height: 50%;">
                                     {{-- dynamic content --}}
                                 </div>
-                                <div class="product-details-small quickview-active owl-carousel" id="productDetailCarouselImages">
+                                <br>
+                                <div class="product-details-small quickview-active owl-carousel" id="productDetailCarouselImages" style="width:100%; height: 50%; ">
                                     {{-- dynamic_content --}}
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7 col-sm-7 col-xs-12">
                             <div class="modal-pro-content">
-                                <h3 id="productName">productName</h3>
+                                <h3 style="text-align:center" id="productName">productName</h3>
                                 <div class="price" id="productPrice">
                                     <span>productPrice</span>
                                     <span class="old-price">productPrice</span>

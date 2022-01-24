@@ -93,15 +93,7 @@ class ProductController extends Controller
         return view('dashboard.product.index', $data);
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'price' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string', 'max:255'],
-            
-        ]);
-    }
+   
     public function create()
     {
         $data = [
@@ -121,8 +113,8 @@ class ProductController extends Controller
         }
 
         $request->validate([
-            'thumbnail' => ['nullable', 'file', 'mimes:jpg,jpeg,png,bmp', 'between:0,4048'],
-            'name' => ['required', 'max:255'],
+            'thumbnail' => ['required', 'file', 'mimes:jpg,jpeg,png,bmp', 'between:0,4048'],
+            'name' => ['required', 'max:15'],
             'description' => ['nullable'],
             'tags' => ['nullable'],
             'price' => ['required'],

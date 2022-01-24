@@ -13,7 +13,7 @@
                                     <ul class="slides">
                                         <li data-thumb="{{ MyHelper::get_uploaded_file_url($product->thumbnail) }}">
                                             <img src="{{ MyHelper::get_uploaded_file_url($product->thumbnail) }}"
-                                                alt="{{ $product->name }}" />
+                                                alt="{{ $product->name }}"  />
                                         </li>
                                         @foreach ($product->product_galleries as $item)
                                             <li data-thumb="{{ MyHelper::get_uploaded_file_url($item->thumbnail) }}">
@@ -27,7 +27,7 @@
                             <div class="col-lg-7 col-md-6 col-12">
                                 <div class="product-info-main">
                                     <div class="page-title">
-                                        <h1>{{ $product->name }}</h1>
+                                        <h1 style="text-align:center">{{ $product->name }}</h1>
                                     </div>
                                     <div class="product-reviews-summary">
                                         <div class="reviews-actions">
@@ -97,7 +97,7 @@
                 <div class="col-lg-3 col-md-12 col-12 order-lg-2 order-2">
                     <div class="shop-left">
                         <div class="left-title mb-20">
-                            <h4>Produk Serupa</h4>
+                            <h4 style="text-alilgn:center">Produk Serupa</h4>
                         </div>
                         <div class="random-area mb-30">
                             <div class="product-active-2 owl-carousel">
@@ -157,7 +157,7 @@
                                     <div class="product-flag">
                                         <ul>
                                             @if (strtotime($item->created_at) > strtotime('-7 day'))
-                                                <li><span class="sale">new</span></li>
+                                                <li><span class="sale">Baru</span></li>
                                             @endif
                                             @if ($item->is_discount)
                                                     @php

@@ -88,6 +88,12 @@
                     <div class="form-group col-md-4">
                         <label>Thumbnail Produk</label>
                         <input type="file" class="form-control" name="thumbnail">
+                        <br>
+                         @if ($errors->has('thumbnail'))
+                                        @foreach ($errors->get('thumbnail') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
 
                     <div class="form-group col-md-4">

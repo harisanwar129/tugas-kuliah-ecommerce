@@ -26,6 +26,12 @@
                         <img src="{{ MyHelper::get_uploaded_file_url($productCategory->thumbnail) }}" alt="picture" width="150" class="mb-1">
                         <input type="file" class="form-control" name="thumbnail">
                         <small class="text-muted">Disarankan ukuran: 1360 x 760</small>
+                        <br>
+                         @if ($errors->has('thumbnail'))
+                                        @foreach ($errors->get('thumbnail') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
 
                     <div class="form-group col-md-12 text-right">

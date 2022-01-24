@@ -85,7 +85,7 @@
                     <div class="col-lg-4 col-md-12 col-12">
                         <div class="logo-area text-center logo-xs-mrg">
                             <a href="{{ route('welcome') }}"><img src="{{ config('setting.logo_rect_url') == '' ? asset('img/yourlogo.png') : config('setting.logo_rect_url') }}" alt="logo"
-                                    width="200"  /></a>
+                                    class="img-responsive" style="width:100%;height:50%" /></a>
                         </div>
                     </div>
                     
@@ -163,8 +163,8 @@
                   
                 </div>
 
-               <div class="row">
-                    <div class="col-lg-12 col-md-3 col-12 pb-562" >
+               <div class="row pb-35">
+                    <div class="col-lg-12 col-md-3 col-12 " >
                         <div class="account-area text-right">
                             <ul>
                                 @if (Auth::check())

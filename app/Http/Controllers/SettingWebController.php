@@ -42,12 +42,12 @@ class SettingWebController extends Controller
         $request->validate([
             'logo' => ['nullable', 'file', 'mimes:jpg,jpeg,png,bmp', 'between:0,4048'],
             'logo_rect' => ['nullable', 'file', 'mimes:jpg,jpeg,png,bmp', 'between:0,4048'],
-            'app_name' => ['required', 'max:255'],
+            'app_name' => ['required', 'max:30'],
             'color' => ['nullable'],
             'footer_text' => ['nullable'],
-            'ipaymu_api' => ['nullable'],
-            'ipaymu_va' => ['nullable'],
-            'ipaymu_url' => ['nullable'],
+            'ipaymu_api' => ['required'],
+            'ipaymu_va' => ['required'],
+            'ipaymu_url' => ['required'],
             'rajaongkir_api_key' => ['nullable'],
             'city_from' => ['required', 'integer']
         ]);

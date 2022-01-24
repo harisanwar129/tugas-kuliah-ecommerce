@@ -41,8 +41,8 @@ class ProductCategoryController extends Controller
         }
 
         $request->validate([
-            'thumbnail' => ['nullable', 'file', 'mimes:jpg,jpeg,png,bmp', 'between:0,4048'],
-            'name' => ['required', 'max:100'],
+            'thumbnail' => ['required', 'file', 'mimes:jpg,jpeg,png,bmp', 'between:0,4048'],
+            'name' => ['required', 'max:15'],
         ]);
 
         if ($request->hasFile('thumbnail')) {

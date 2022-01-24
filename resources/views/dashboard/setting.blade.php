@@ -18,22 +18,17 @@
 
                 <form class="row myForm" method="POST" action="{{ route('dashboard.setting') }}"
                     enctype="multipart/form-data">
-                    @if ($errors->any())
-                        <div class="col-md-12">
-                            <ul>
-                                @foreach ($errors->all() as $item)
-                                    <li class="text-danger">
-                                        {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                   
                     @csrf
                     @method('PUT')
                     <div class="form-group col-md-3">
                         <label>Nama Aplikasi</label>
                         <input type="text" class="form-control" name="app_name" id="app_name" value="{{ $setting->app_name }}">
+                         @if ($errors->has('app_name'))
+                                        @foreach ($errors->get('app_name') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
                     <div class="form-group col-md-3">
                         <label>Logo (Rounded)</label>
@@ -42,6 +37,12 @@
                         @endif
                         <input type="file" class="form-control" name="logo">
                         <small class="text-muted">Support: PNG,JPG</small>
+                        <br>
+                         @if ($errors->has('logo'))
+                                        @foreach ($errors->get('logo') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
                     <div class="form-group col-md-3">
                         <label>Logo (Rectangle)</label>
@@ -50,6 +51,13 @@
                         @endif
                         <input type="file" class="form-control" name="logo_rect">
                         <small class="text-muted">Support: PNG,JPG</small>
+
+                        <br>
+                         @if ($errors->has('logo_rect'))
+                                        @foreach ($errors->get('logo_rect') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
                     <div class="form-group col-md-3">
                         <label>Warna Tema</label>
@@ -89,14 +97,29 @@
                     <div class="form-group col-md-3">
                         <label>iPaymu API Key</label>
                         <input type="text" class="form-control" name="ipaymu_api" id="ipaymu_api" value="{{ $setting->ipaymu_api }}">
+                          @if ($errors->has('ipaymu_api'))
+                                        @foreach ($errors->get('ipaymu_api') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
                     <div class="form-group col-md-3">
                         <label>iPaymu VA</label>
                         <input type="text" class="form-control" name="ipaymu_va" id="ipaymu_va" value="{{ $setting->ipaymu_va }}">
+                         @if ($errors->has('ipaymu_va'))
+                                        @foreach ($errors->get('ipaymu_va') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
                     <div class="form-group col-md-3">
                         <label>iPaymu URL</label>
                         <input type="text" class="form-control" name="ipaymu_url" id="ipaymu_url" value="{{ $setting->ipaymu_url }}">
+                        @if ($errors->has('ipaymu_url'))
+                                        @foreach ($errors->get('ipaymu_url') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
                     </div>
 
                     <div class="form-group col-md-3">
