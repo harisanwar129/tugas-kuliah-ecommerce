@@ -85,7 +85,7 @@
                     <div class="col-lg-4 col-md-12 col-12">
                         <div class="logo-area text-center logo-xs-mrg">
                             <a href="{{ route('welcome') }}"><img src="{{ config('setting.logo_rect_url') == '' ? asset('img/yourlogo.png') : config('setting.logo_rect_url') }}" alt="logo"
-                                    class="img-responsive" style="width:100%;height:50%" /></a>
+                                    class="img-responsive" style="width:400px;height:100px" /></a>
                         </div>
                     </div>
                     
