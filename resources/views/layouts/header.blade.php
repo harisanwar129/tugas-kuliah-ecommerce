@@ -91,7 +91,8 @@
                     
 
                     @if (Auth::check() && Auth::user()->role == 'MEMBER')
-                        <div class="col-lg-4 col-md-12 col-12 " style="text:center">
+                        <div class="col-lg-4 col-md-12 col-12 " style=" position: relative;
+        top: 60px; ">
                             <div class="my-cart">
                                 <ul class="d-flex justify-content-between">
                                     @php
