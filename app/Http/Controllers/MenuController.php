@@ -37,8 +37,8 @@ class MenuController extends Controller
         }
 
         $request->validate([
-            'nama' => ['required', 'string', 'max:255'],
-            'link' => ['required', 'string'],
+            'nama' => ['required', 'string', 'max:15'],
+            'link' => ['required', 'string','max:100'],
         ]);
 
         $Menu = new Menu();

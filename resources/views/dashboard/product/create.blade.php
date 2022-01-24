@@ -11,11 +11,13 @@
                     <div class="form-group col-md-6">
                         <label>Nama Produk</label>
                         <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" >
+                        <div>
                            @if ($errors->has('name'))
                                         @foreach ($errors->get('name') as $msg)
                                             <small class="text-danger">{{ $msg }}</small>
                                         @endforeach
                                     @endif
+                                    </div>
                     </div>
                     <div class="form-group col-md-3">
                         <label>Harga Normal</label>

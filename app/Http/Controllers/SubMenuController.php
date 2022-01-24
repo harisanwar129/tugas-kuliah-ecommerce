@@ -58,8 +58,8 @@ class SubMenuController extends Controller
         }
 
         $request->validate([
-            'nama' => ['required', 'string', 'max:255'],
-            'link' => ['nullable', 'string'],
+            'nama' => ['required', 'string', 'max:20'],
+            'link' => ['required', 'string', 'max:20'],
             'menu_id' => ['nullable'],
         ]);
 

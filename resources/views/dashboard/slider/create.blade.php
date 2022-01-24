@@ -11,21 +11,25 @@
                         <label>Title</label>
                         <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         <small class="text-muted">Disarankan tidak lebih dari 20 Karakter</small>
+                        <div>
                         @if ($errors->has('title'))
                             @foreach ($errors->get('title') as $msg)
                                 <small class="text-danger">{{ $msg }}</small>
                             @endforeach
                         @endif
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Subtitle</label>
                         <input type="text" class="form-control" name="subtitle" value="{{ old('subtitle') }}">
                         <small class="text-muted">Disarankan tidak lebih dari 30 Karakter</small>
+                        <div>
                          @if ($errors->has('subtitle'))
                             @foreach ($errors->get('subtitle') as $msg)
                                 <small class="text-danger">{{ $msg }}</small>
                             @endforeach
                         @endif
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Teks Tombol</label>
@@ -45,11 +49,13 @@
                         <label>Gambar</label>
                         <input type="file" class="form-control" name="thumbnail">
                         <small class="text-muted">Disarankan ukuran: 1360 x 760</small>
+                        <div>
                         @if ($errors->has('thumbnail'))
                             @foreach ($errors->get('thumbnail') as $msg)
                                 <small class="text-danger">{{ $msg }}</small>
                             @endforeach
                         @endif
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Status</label>

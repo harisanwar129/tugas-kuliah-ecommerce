@@ -36,8 +36,8 @@ class SliderController extends Controller
     {
         $request->validate([
             'thumbnail' => ['required', 'file', 'mimes:jpg,jpeg,png,bmp', 'between:0,4048'],
-            'title' => ['required', 'max:100'],
-            'subtitle' => ['nullable', 'max:100'],
+            'title' => ['required', 'max:20'],
+            'subtitle' => ['required', 'max:30'],
             'button_text' => ['nullable'],
             'link' => ['nullable'],
             'urutan' => ['nullable'],

@@ -47,7 +47,8 @@ class PageController extends Controller
         }
 
         $request->validate([
-            'nama' => ['required', 'string', 'max:255'],
+            'nama' => ['required', 'string', 'max:30'],
+            'konten' => ['required'],
         ]);
 
         $Page = new Page();

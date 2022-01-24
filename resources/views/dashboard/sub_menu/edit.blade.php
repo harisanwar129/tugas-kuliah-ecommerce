@@ -6,17 +6,7 @@
             <div class="card-box">
                 <form class="row myForm" id="myForm" method="POST"
                     action="{{ route('dashboard.master.submenu.update', $sub_menu->id) }}" enctype="multipart/form-data">
-                    @if ($errors->any())
-                        <div class="col-md-12">
-                            <ul>
-                                @foreach ($errors->all() as $item)
-                                    <li class="text-danger">
-                                        {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                    
                     @csrf
                     @method('PUT')
                     <div class="col-md-8">
@@ -43,6 +33,13 @@
                         <div class="form-group">
                             <label>Nama Sub Menu <span class="text-danger">*</span></label>
                             <input type="text" name="nama" class="form-control" value="{{ $sub_menu->nama }}">
+                            <div>
+                           @if ($errors->has('nama'))
+                                        @foreach ($errors->get('nama') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                         </div>
                     </div>
                     <div class="col-md-8 div_link {{ $sub_menu->link == null ? 'd-none' : 'block' }}">

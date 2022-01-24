@@ -6,29 +6,33 @@
             <div class="card-box">
                 <form class="row myForm" id="myForm" method="POST"
                     action="{{ route('dashboard.master.page.update', $page->id) }}" enctype="multipart/form-data">
-                    @if ($errors->any())
-                        <div class="col-md-12">
-                            <ul>
-                                @foreach ($errors->all() as $item)
-                                    <li class="text-danger">
-                                        {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                    
                     @csrf
                     @method('PUT')
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Nama Page <span class="text-danger">*</span></label>
                             <input type="text" name="nama" class="form-control" value="{{ $page->nama }}">
+                             <div>
+                           @if ($errors->has('nama'))
+                                        @foreach ($errors->get('nama') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                         </div>
                     </div>
                     <div class="col-md-12 check-mobile">
                         <div class="form-group">
                             <label class="check-mobile-label">Konten</label>
                             <textarea name="konten" class="form-control check-mobile-form ckeditor">{!! $page->konten !!}</textarea>
+                             <div>
+                           @if ($errors->has('konten'))
+                                        @foreach ($errors->get('konten') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                         </div>
                     </div>
 

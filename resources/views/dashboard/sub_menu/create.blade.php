@@ -6,17 +6,7 @@
             <div class="card-box">
                 <form class="row myForm" id="myForm" method="POST"
                     action="{{ route('dashboard.master.submenu.store') }}" enctype="multipart/form-data">
-                    @if ($errors->any())
-                        <div class="col-md-12">
-                            <ul>
-                                @foreach ($errors->all() as $item)
-                                    <li class="text-danger">
-                                        {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                   
                     @csrf
                     <div class="col-md-8">
                         <div class="form-group">
@@ -42,12 +32,26 @@
                         <div class="form-group">
                             <label>Nama Sub Menu <span class="text-danger">*</span></label>
                             <input type="text" name="nama" class="form-control" value="{{ old('nama') }}">
+                         <div>
+                           @if ($errors->has('nama'))
+                                        @foreach ($errors->get('nama') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                         </div>
                     </div>
                     <div class="col-md-8 div_link">
                         <div class="form-group">
                             <label>Link <span class="text-danger">*</span></label>
                             <input type="text" name="link" class="form-control" value="{{ old('link') }}">
+                         <div>
+                           @if ($errors->has('link'))
+                                        @foreach ($errors->get('link') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                         </div>
                     </div>
                     <div class="col-md-8 div_page d-none">

@@ -6,28 +6,32 @@
             <div class="card-box">
                 <form class="row myForm" method="POST"
                     action="{{ route('dashboard.master.slider.update', $slider->id) }}" enctype="multipart/form-data">
-                    @if ($errors->any())
-                        <div class="col-md-12">
-                            <ul>
-                                @foreach ($errors->all() as $item)
-                                    <li class="text-danger">
-                                        {{ $item }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                   
                     @csrf
                     @method('PUT')
                     <div class="form-group col-md-4">
                         <label>Title</label>
                         <input type="text" class="form-control" name="title" value="{{ $slider->title }}">
                         <small class="text-muted">Disarankan tidak lebih dari 20 Karakter</small>
+                        <div>
+                         @if ($errors->has('title'))
+                                        @foreach ($errors->get('title') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Subtitle</label>
                         <input type="text" class="form-control" name="subtitle" value="{{ $slider->subtitle }}">
                         <small class="text-muted">Disarankan tidak lebih dari 30 Karakter</small>
+                        <div>
+                         @if ($errors->has('subtitle'))
+                                        @foreach ($errors->get('subtitle') as $msg)
+                                            <small class="text-danger">{{ $msg }}</small>
+                                        @endforeach
+                                    @endif
+                                    </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Teks Tombol</label>
@@ -49,6 +53,13 @@
                             class="mb-1">
                         <input type="file" class="form-control" name="thumbnail">
                         <small class="text-muted">Disarankan ukuran: 1360 x 760</small>
+                        <div>
+                        @if ($errors->has('thumbnail'))
+                            @foreach ($errors->get('thumbnail') as $msg)
+                                <small class="text-danger">{{ $msg }}</small>
+                            @endforeach
+                        @endif
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Status</label>
